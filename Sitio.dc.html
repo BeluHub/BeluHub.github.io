@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="María Belén Silva — Antropóloga social e investigadora independiente. Especialización en antropología del deporte, género y corporalidad. Posadas, Misiones, Argentina.">
+  <meta property="og:title" content="María Belén Silva — Antropóloga social · Investigadora independiente">
+  <meta property="og:description" content="Investiga las intersecciones entre deporte, género y corporalidad en comunidades del NEA. Investigadora en CESME · Divulgadora · BS Consultora.">
+  <meta property="og:type" content="website">
+  <title>María Belén Silva — Antropóloga social · Investigadora independiente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="image-slot.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #F5F2ED; color: #1C1917; -webkit-font-smoothing: antialiased; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #C9BFB4; border-radius: 3px; }
+    a { text-decoration: none; color: inherit; }
+    input, textarea, select, button { font-family: inherit; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideRight { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</helmet>
+
+<!-- SIDEBAR DESKTOP -->
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+  <aside style="position:fixed;top:0;left:0;width:220px;height:100vh;background:#fff;border-right:1px solid #E2DBD1;display:flex;flex-direction:column;z-index:100;overflow:hidden;">
+    <div style="padding:28px 24px 22px;border-bottom:1px solid #E2DBD1;flex-shrink:0;">
+      <div style="font-family:'EB Garamond',Georgia,serif;font-size:23px;font-weight:600;letter-spacing:0.07em;color:#1C1917;line-height:1;">MBS</div>
+      <div style="margin-top:5px;font-family:'Inter',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#A8A29E;">María Belén Silva</div>
+    </div>
+    <nav style="flex:1;padding:14px 0;overflow-y:auto;">
+      <sc-for list="{{ navItems }}" as="navItem" hint-placeholder-count="8">
+        <a href="{{ navItem.href }}" onClick="{{ closeMenu }}" style="display:flex;align-items:center;gap:12px;padding:9px 24px;transition:background 0.15s;" style-hover="background:#F8F5F0;">
+          <span style="width:2px;height:14px;border-radius:1px;flex-shrink:0;background:{{ navItem.bar }};transition:background 0.2s;"></span>
+          <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:{{ navItem.wt }};letter-spacing:0.02em;color:{{ navItem.clr }};transition:color 0.2s;">{{ navItem.label }}</span>
+        </a>
+      </sc-for>
+    </nav>
+    <div style="padding:20px 24px;border-top:1px solid #E2DBD1;flex-shrink:0;">
+      <div style="font-family:'Inter',sans-serif;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#A8A29E;margin-bottom:12px;">Investigadora · CESME</div>
+      <div style="display:flex;gap:8px;margin-bottom:16px;">
+        <a href="https://instagram.com" target="_blank" style="width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid #E2DBD1;border-radius:50%;color:#78716C;transition:all 0.2s;" style-hover="border-color:#9E7435;color:#9E7435;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" style="width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid #E2DBD1;border-radius:50%;color:#78716C;transition:all 0.2s;" style-hover="border-color:#9E7435;color:#9E7435;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+        </a>
+        <a href="#" style="width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid #E2DBD1;border-radius:50%;color:#78716C;transition:all 0.2s;" style-hover="border-color:#9E7435;color:#9E7435;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+        </a>
+      </div>
+      <a href="#consultoria" style="display:block;padding:9px 12px;background:#1C1917;color:#F5F2ED;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;border-radius:2px;transition:background 0.2s;" style-hover="background:#9E7435;">BS Consultora →</a>
+    </div>
+  </aside>
+</sc-if>
+
+<!-- MOBILE TOP BAR -->
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <header style="position:fixed;top:0;left:0;right:0;height:60px;background:#fff;border-bottom:1px solid #E2DBD1;display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:100;">
+    <div style="display:flex;align-items:baseline;gap:8px;">
+      <span style="font-family:'EB Garamond',Georgia,serif;font-size:20px;font-weight:600;letter-spacing:0.06em;color:#1C1917;">MBS</span>
+      <span style="font-family:'Inter',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#A8A29E;">María Belén Silva</span>
+    </div>
+    <button onClick="{{ toggleMenu }}" style="width:40px;height:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;">
+      <span style="display:block;width:22px;height:1.5px;background:#1C1917;border-radius:1px;"></span>
+      <span style="display:block;width:22px;height:1.5px;background:#1C1917;border-radius:1px;"></span>
+      <span style="display:block;width:15px;height:1.5px;background:#1C1917;border-radius:1px;align-self:flex-end;"></span>
+    </button>
+  </header>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;background:#fff;z-index:200;display:flex;flex-direction:column;animation:fadeIn 0.18s ease both;">
+      <div style="height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid #F0EBE4;">
+        <span style="font-family:'EB Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#1C1917;">MBS</span>
+        <button onClick="{{ toggleMenu }}" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:none;border:1px solid #E2DBD1;border-radius:2px;cursor:pointer;font-size:22px;color:#1C1917;line-height:1;">×</button>
+      </div>
+      <nav style="flex:1;padding:8px 24px;overflow-y:auto;">
+        <sc-for list="{{ navItems }}" as="navItem" hint-placeholder-count="8">
+          <a href="{{ navItem.href }}" onClick="{{ closeMenu }}" style="display:block;padding:16px 0;font-family:'EB Garamond',Georgia,serif;font-size:30px;font-weight:400;color:#1C1917;border-bottom:1px solid #F5F0EA;transition:color 0.15s;" style-hover="color:#9E7435;">{{ navItem.label }}</a>
+        </sc-for>
+      </nav>
+      <div style="padding:20px 24px;border-top:1px solid #E2DBD1;display:flex;gap:16px;align-items:center;">
+        <a href="https://instagram.com" style="font-family:'Inter',sans-serif;font-size:12px;color:#78716C;" style-hover="color:#9E7435;">Instagram</a>
+        <span style="color:#E2DBD1;">·</span>
+        <a href="#consultoria" onClick="{{ closeMenu }}" style="font-family:'Inter',sans-serif;font-size:12px;color:#78716C;" style-hover="color:#9E7435;">BS Consultora</a>
+      </div>
+    </div>
+  </sc-if>
+</sc-if>
+
+<!-- MAIN -->
+<main style="margin-left:{{ mainML }};padding-top:{{ mainPT }};min-height:100vh;">
+
+  <!-- 1. HERO -->
+  <section id="inicio" data-section="inicio" data-screen-label="Inicio / Hero" style="min-height:100vh;position:relative;overflow:hidden;background:#F5F2ED;display:flex;align-items:center;padding:{{ heroSP }};">
+    <div style="position:absolute;top:0;right:0;width:42%;height:100%;background:#EDE8DF;clip-path:polygon(10% 0,100% 0,100% 100%,0% 100%);z-index:0;display:{{ diagDisplay }};"></div>
+    <div style="position:absolute;right:42%;top:10%;height:80%;width:1px;background:linear-gradient(to bottom,transparent,#9E7435 25%,#9E7435 75%,transparent);z-index:1;display:{{ diagDisplay }};"></div>
+    <div style="display:flex;flex-direction:{{ heroFlex }};align-items:center;gap:{{ heroGap }};width:100%;max-width:1200px;margin:0 auto;position:relative;z-index:2;">
+      <div style="flex:3;display:flex;flex-direction:column;justify-content:center;padding-right:{{ heroPR }};min-width:0;">
+        <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#9E7435;margin-bottom:20px;animation:fadeUp 0.5s ease both;">Posadas, Misiones · Argentina</p>
+        <h1 style="font-family:'EB Garamond',Georgia,serif;font-size:{{ heroNmSz }};font-weight:600;line-height:0.9;letter-spacing:-0.02em;color:#1C1917;margin-bottom:22px;animation:fadeUp 0.6s ease 0.08s both;">María Belén<br>Silva</h1>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:26px;animation:fadeUp 0.6s ease 0.14s both;">
+          <div style="width:28px;height:1px;background:#9E7435;flex-shrink:0;"></div>
+          <p style="font-family:'EB Garamond',Georgia,serif;font-size:{{ heroDescSz }};font-style:italic;color:#78716C;line-height:1.3;">Antropóloga social · Investigadora independiente</p>
+        </div>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.78;color:#6B6460;max-width:460px;margin-bottom:40px;animation:fadeUp 0.6s ease 0.2s both;">Investigo las intersecciones entre deporte, género y corporalidad en comunidades del NEA argentino. Soy coordinadora de campo en Fundación CESME, donde investigo sobre salud mental relacionada al deporte. Divulgadora de ciencias sociales y consultora metodológica a través de BS Consultora.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp 0.6s ease 0.28s both;">
+          <a href="#observatorio" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:#9E7435;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;border-radius:2px;transition:background 0.2s;" style-hover="background:#7D5B28;">Ver el Observatorio <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M7.5 2.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a href="#contacto" style="display:inline-flex;align-items:center;padding:11px 22px;color:#1C1917;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;border:1.5px solid #C9BFB4;border-radius:2px;transition:all 0.2s;" style-hover="border-color:#9E7435;color:#9E7435;">Contacto profesional</a>
+        </div>
+      </div>
+      <div style="flex:2;display:flex;align-items:center;justify-content:center;animation:slideRight 0.7s ease 0.1s both;flex-shrink:0;">
+        <div style="position:relative;width:100%;max-width:{{ heroPhMaxW }};">
+          <div style="position:absolute;top:-10px;left:-10px;width:44px;height:44px;border-top:2px solid #9E7435;border-left:2px solid #9E7435;border-radius:2px 0 0 0;z-index:2;pointer-events:none;"></div>
+          <div style="position:absolute;bottom:-10px;right:-10px;width:44px;height:44px;border-bottom:2px solid #9E7435;border-right:2px solid #9E7435;border-radius:0 0 2px 0;z-index:2;pointer-events:none;"></div>
+          <image-slot id="hero-photo" placeholder="Foto · Arrastrá aquí" shape="rect" style="width:100%;aspect-ratio:3/4;display:block;border-radius:2px;overflow:hidden;"></image-slot>
+        </div>
+      </div>
+    </div>
+    <sc-if value="{{ showScrollCue }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeIn 1s ease 0.8s both;">
+        <span style="font-family:'Inter',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#B0A89E;">Explorar</span>
+        <div style="width:1px;height:28px;background:linear-gradient(to bottom,#C9BFB4,transparent);"></div>
+      </div>
+    </sc-if>
+  </section>
+
+  <!-- 2. SOBRE MÍ -->
+  <section id="sobre-mi" data-section="sobre-mi" data-screen-label="Sobre mí" style="padding:{{ sp }};background:#fff;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="margin-bottom:52px;">
+        <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#9E7435;margin-bottom:12px;">Sobre mí</p>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-size:{{ ts }};font-weight:600;line-height:1.08;letter-spacing:-0.01em;color:#1C1917;">Investigación desde la práctica,<br>conocimiento desde el campo</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ sobreCols }};gap:56px;align-items:start;">
+        <div>
+          <p style="font-family:'EB Garamond',Georgia,serif;font-size:20px;line-height:1.65;color:#1C1917;margin-bottom:22px;">María Belén Silva es antropóloga social con base en Posadas, Misiones. Se especializa en el estudio del deporte como arena social: un espacio donde se negocian jerarquías de género, se construyen identidades colectivas y se inscriben normas corporales.</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.8;color:#6B6460;margin-bottom:18px;">Su trabajo articula etnografía, perspectiva de género y teorías del cuerpo para analizar prácticas deportivas en comunidades del NEA argentino. Investiga en la Fundación CESME, donde trabaja sobre bienestar comunitario y participación deportiva.</p>
+          <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.8;color:#6B6460;">Divulga ciencias sociales en Instagram —próximamente en YouTube y podcast— desde una perspectiva crítica pero accesible. A través de BS Consultora, ofrece asesoramiento metodológico para investigadores, equipos e instituciones que trabajan con datos cualitativos.</p>
+        </div>
+        <div>
+          <div style="background:#F5F2ED;border-radius:2px;padding:32px;margin-bottom:20px;">
+            <p style="font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#9E7435;margin-bottom:20px;">Líneas de investigación</p>
+            <div style="display:flex;flex-direction:column;gap:18px;">
+              <div style="display:flex;gap:14px;align-items:flex-start;"><div style="width:2px;min-height:40px;background:#9E7435;flex-shrink:0;margin-top:3px;border-radius:1px;"></div><div><p style="font-family:'EB Garamond',Georgia,serif;font-size:17px;font-weight:500;color:#1C1917;line-height:1.25;margin-bottom:3px;">Antropología del deporte</p><p style="font-family:'Inter',sans-serif;font-size:12px;color:#A8A29E;line-height:1.5;">Prácticas, rituales y cultura deportiva popular</p></div></div>
+              <div style="display:flex;gap:14px;align-items:flex-start;"><div style="width:2px;min-height:40px;background:#C4B8A4;flex-shrink:0;margin-top:3px;border-radius:1px;"></div><div><p style="font-family:'EB Garamond',Georgia,serif;font-size:17px;font-weight:500;color:#1C1917;line-height:1.25;margin-bottom:3px;">Género y corporalidad</p><p style="font-family:'Inter',sans-serif;font-size:12px;color:#A8A29E;line-height:1.5;">Normas, performatividades y resistencias</p></div></div>
+              <div style="display:flex;gap:14px;align-items:flex-start;"><div style="width:2px;min-height:40px;background:#C4B8A4;flex-shrink:0;margin-top:3px;border-radius:1px;"></div><div><p style="font-family:'EB Garamond',Georgia,serif;font-size:17px;font-weight:500;color:#1C1917;line-height:1.25;margin-bottom:3px;">Deporte y salud mental</p><p style="font-family:'Inter',sans-serif;font-size:12px;color:#A8A29E;line-height:1.5;">Percepciones del entorno e identidad a través del deporte</p></div></div>
+              <div style="display:flex;gap:14px;align-items:flex-start;"><div style="width:2px;min-height:40px;background:#C4B8A4;flex-shrink:0;margin-top:3px;border-radius:1px;"></div><div><p style="font-family:'EB Garamond',Georgia,serif;font-size:17px;font-weight:500;color:#1C1917;line-height:1.25;margin-bottom:3px;">Divulgación científica</p><p style="font-family:'Inter',sans-serif;font-size:12px;color:#A8A29E;line-height:1.5;">Comunicación de ciencias sociales para audiencias amplias</p></div></div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PRODUCCIÓN -->
+  <section id="produccion" data-section="produccion" data-screen-label="Producción / Archivo" style="padding:{{ sp }};background:#F5F2ED;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="margin-bottom:36px;">
+        <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#9E7435;margin-bottom:12px;">Producción / Archivo</p>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-size:{{ ts }};font-weight:600;line-height:1.08;letter-spacing:-0.01em;color:#1C1917;margin-bottom:14px;">Textos, ponencias y ensayos</h2>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#78716C;line-height:1.7;max-width:560px;">Registro de producción académica y de divulgación.&nbsp;</p>
+      </div>
+      <div style="border-bottom:1px solid #E2DBD1;margin-bottom:40px;padding-bottom:0;">
+        <span style="display:inline-block;padding:12px 0;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:#1C1917;letter-spacing:0.03em;border-bottom:2px solid #9E7435;margin-bottom:-1px;">Papers y ponencias</span>
+      </div>
+      <div>
+        <sc-for list="{{ produccion }}" as="item" hint-placeholder-count="5">
+          <div style="padding:26px 0;border-bottom:1px solid #E2DBD1;display:flex;gap:24px;align-items:flex-start;">
+            <span style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:#C4B8A4;flex-shrink:0;width:36px;padding-top:6px;">{{ item.year }}</span>
+            <div style="flex:1;min-width:0;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                <span style="font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:{{ item.tipoBg }};color:{{ item.tipoClr }};">{{ item.tipo }}</span>
+              </div>
+              <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:20px;font-weight:500;color:#1C1917;line-height:1.3;margin-bottom:6px;">{{ item.title }}</h3>
+              <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#9E7435;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px;">{{ item.sub }}</p>
+              <p style="font-family:'Inter',sans-serif;font-size:12px;color:#A8A29E;">{{ item.lugar }}</p>
+            </div>
+            <a href="{{ item.url }}" target="_blank" style="flex-shrink:0;padding:7px 13px;border:1px solid #E2DBD1;border-radius:2px;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:#78716C;white-space:nowrap;transition:all 0.2s;" style-hover="border-color:#9E7435;color:#9E7435;">Ver →</a>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. OBSERVATORIO -->
+  <section id="observatorio" data-section="observatorio" data-screen-label="Observatorio de Deporte y Sociedad" style="padding:{{ sp }};background:#18140F;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:{{ twoCols }};gap:40px;align-items:end;margin-bottom:52px;">
+        <div>
+          <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#D4A843;margin-bottom:12px;">Observatorio de Deporte y Sociedad</p>
+          <h2 style="font-family:'EB Garamond',Georgia,serif;font-size:{{ ts }};font-weight:600;line-height:1.08;letter-spacing:-0.01em;color:#F0E8D8;">Datos, hallazgos<br>y territorio</h2>
+        </div>
+        <div>
+          <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.78;color:rgba(240,232,216,0.6);margin-bottom:18px;">Espacio de producción e intercambio de datos sobre deporte y sociedad en Argentina. Registros propios y contribuciones de colegas e investigadores externos.</p>
+          <a href="#contacto" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid rgba(212,168,67,0.4);border-radius:2px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#D4A843;letter-spacing:0.04em;transition:all 0.2s;" style-hover="background:rgba(212,168,67,0.1);">Sumate al Observatorio <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 2l4 3.5L6 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ obsGC }};gap:20px;margin-bottom:28px;">
+        <sc-for list="{{ obsItems }}" as="entry" hint-placeholder-count="3">
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:2px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:border-color 0.2s;" style-hover="border-color:rgba(212,168,67,0.35);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+              <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D4A843;background:rgba(212,168,67,0.12);padding:4px 8px;border-radius:2px;">N° {{ entry.id }}</span>
+              <span style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(240,232,216,0.35);flex-shrink:0;">{{ entry.fecha }}</span>
+            </div>
+            <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:19px;font-weight:500;color:#F0E8D8;line-height:1.35;flex:1;">{{ entry.title }}</h3>
+            <div>
+              <p style="font-family:'Inter',sans-serif;font-size:10px;font-weight:600;color:rgba(240,232,216,0.45);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">{{ entry.fuente }}</p>
+              <p style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(240,232,216,0.62);line-height:1.65;">{{ entry.resumen }}</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <sc-for list="{{ entry.tags }}" as="tag" hint-placeholder-count="3">
+                  <span style="font-family:'Inter',sans-serif;font-size:10px;color:rgba(240,232,216,0.45);border:1px solid rgba(255,255,255,0.1);padding:3px 8px;border-radius:10px;">{{ tag }}</span>
+                </sc-for>
+              </div>
+              <sc-if value="{{ entry.hasDl }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ entry.dl }}" style="display:flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:#D4A843;letter-spacing:0.04em;flex-shrink:0;transition:opacity 0.2s;" style-hover="opacity:0.7;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 6l3 3 3-3M1 10.5h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>Descargar</a>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding:28px 32px;border:1px dashed rgba(212,168,67,0.25);border-radius:2px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#D4A843;animation:fadeIn 1s ease infinite alternate;"></div>
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D4A843;">En construcción</span>
+        </div>
+        <p style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(240,232,216,0.4);line-height:1.6;flex:1;">El Observatorio está en desarrollo. Próximamente se irán sumando más fichas de datos. ¿Tenés datos sobre deporte y sociedad en Argentina? <a href="#contacto" style="color:#D4A843;text-decoration:underline;text-underline-offset:3px;">Escribinos.</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AUDIOVISUAL -->
+  <section id="audiovisual" data-section="audiovisual" data-screen-label="Audiovisual y Podcast" style="padding:{{ sp }};background:#fff;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px;">
+        <div><p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#9E7435;margin-bottom:12px;">Audiovisual y Podcast</p><h2 style="font-family:'EB Garamond',Georgia,serif;font-size:{{ ts }};font-weight:600;line-height:1.08;letter-spacing:-0.01em;color:#1C1917;">Ciencia en voz propia</h2></div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;color:#78716C;line-height:1.7;max-width:380px;">Episodios y videos sobre deporte, género y ciencias sociales para audiencias más allá de la academia.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ twoCols }};gap:22px;">
+        <sc-for list="{{ avItems }}" as="avItem" hint-placeholder-count="4">
+          <sc-if value="{{ avItem.isPod }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#F5F2ED;border-radius:2px;padding:28px;display:flex;flex-direction:column;gap:14px;border-left:3px solid #9E7435;transition:transform 0.18s;" style-hover="transform:translateY(-3px);">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9E7435;background:rgba(158,116,53,0.1);padding:4px 8px;border-radius:2px;">Podcast</span>
+                <span style="font-family:'Inter',sans-serif;font-size:11px;color:#A8A29E;">{{ avItem.dur }}</span>
+              </div>
+              <div>
+                <p style="font-family:'EB Garamond',Georgia,serif;font-size:13px;font-weight:600;color:#C4B8A4;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px;">{{ avItem.num }}</p>
+                <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:21px;font-weight:500;color:#1C1917;line-height:1.28;margin-bottom:10px;">{{ avItem.titulo }}</h3>
+                <p style="font-family:'Inter',sans-serif;font-size:13px;color:#78716C;line-height:1.65;">{{ avItem.desc }}</p>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid #E2DBD1;">
+                <span style="font-family:'Inter',sans-serif;font-size:11px;color:#A8A29E;">{{ avItem.fecha }}</span>
+                <a href="{{ avItem.url }}" style="display:flex;align-items:center;gap:6px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#9E7435;transition:opacity 0.2s;" style-hover="opacity:0.7;"><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="rgba(158,116,53,0.12)"></circle><polygon points="8.5,7 8.5,15 15.5,11" fill="#9E7435"></polygon></svg>Escuchar</a>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ avItem.isVid }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#F5F2ED;border-radius:2px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.18s;" style-hover="transform:translateY(-3px);">
+              <div style="background:#E8E3DA;height:175px;display:flex;align-items:center;justify-content:center;position:relative;">
+                <div style="width:52px;height:52px;background:#9E7435;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(158,116,53,0.35);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6.5,3.5 6.5,14.5 14.5,9" fill="#fff"></polygon></svg></div>
+                <span style="position:absolute;top:12px;left:12px;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:rgba(28,25,23,0.65);padding:4px 8px;border-radius:2px;">Video</span>
+                <span style="position:absolute;bottom:12px;right:12px;font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.75);">{{ avItem.dur }}</span>
+              </div>
+              <div style="padding:24px;flex:1;display:flex;flex-direction:column;gap:10px;">
+                <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:20px;font-weight:500;color:#1C1917;line-height:1.3;">{{ avItem.titulo }}</h3>
+                <p style="font-family:'Inter',sans-serif;font-size:13px;color:#78716C;line-height:1.65;flex:1;">{{ avItem.desc }}</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid #E2DBD1;">
+                  <span style="font-family:'Inter',sans-serif;font-size:11px;color:#A8A29E;">{{ avItem.fecha }}</span>
+                  <a href="{{ avItem.url }}" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#9E7435;transition:opacity 0.2s;" style-hover="opacity:0.7;">Ver →</a>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONSULTORÍA -->
+  <section id="consultoria" data-section="consultoria" data-screen-label="BS Consultora" style="padding:{{ sp }};background:#F0ECE6;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:{{ twoCols }};gap:40px;align-items:end;margin-bottom:52px;">
+        <div><p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#9E7435;margin-bottom:8px;">BS Consultora</p><h2 style="font-family:'EB Garamond',Georgia,serif;font-size:{{ ts }};font-weight:600;line-height:1.08;letter-spacing:-0.01em;color:#1C1917;">Asesoramiento<br>metodológico</h2></div>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.78;color:#6B6460;">Consultoría especializada en metodología de investigación cualitativa. Para tesistas, investigadores independientes, equipos interdisciplinarios e instituciones.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ twoCols }};gap:20px;margin-bottom:44px;">
+        <sc-for list="{{ servicios }}" as="servicio" hint-placeholder-count="4">
+          <div style="background:#fff;border-radius:2px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;border:1px solid #E2DBD1;transition:box-shadow 0.2s;" style-hover="box-shadow:0 4px 20px rgba(28,25,23,0.07);">
+            <span style="font-family:'EB Garamond',Georgia,serif;font-size:34px;font-weight:400;color:#D4C8B4;line-height:1;">{{ servicio.num }}</span>
+            <div>
+              <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:22px;font-weight:500;color:#1C1917;line-height:1.22;margin-bottom:10px;">{{ servicio.titulo }}</h3>
+              <p style="font-family:'Inter',sans-serif;font-size:14px;color:#78716C;line-height:1.72;">{{ servicio.desc }}</p>
+            </div>
+            <a href="#contacto" style="display:inline-flex;align-items:center;gap:6px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#9E7435;letter-spacing:0.04em;margin-top:auto;transition:gap 0.2s;" style-hover="gap:10px;">Consultar <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 2l4 3.5L6 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          </div>
+        </sc-for>
+      </div>
+      <div style="background:#1C1917;border-radius:2px;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;">
+        <div><h3 style="font-family:'EB Garamond',Georgia,serif;font-size:26px;font-weight:500;color:#F5F2ED;margin-bottom:6px;">¿Tenés un proyecto de investigación?</h3><p style="font-family:'Inter',sans-serif;font-size:14px;color:rgba(245,242,237,0.55);">Escribí y coordinamos una primera reunión de diagnóstico.</p></div>
+        <a href="#contacto" style="display:inline-flex;align-items:center;gap:10px;padding:13px 26px;background:#9E7435;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;border-radius:2px;white-space:nowrap;transition:background 0.2s;flex-shrink:0;" style-hover="background:#7D5B28;">Contactar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. REDES -->
+  <section id="redes" data-section="redes" data-screen-label="Redes y Divulgación" style="padding:{{ sp }};background:#F5F2ED;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="margin-bottom:44px;">
+        <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#9E7435;margin-bottom:12px;">Divulgación y Redes</p>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-size:{{ ts }};font-weight:600;line-height:1.08;letter-spacing:-0.01em;color:#1C1917;margin-bottom:14px;">Ciencias sociales<br>para todo el mundo</h2>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:19px;font-style:italic;color:#78716C;line-height:1.6;max-width:540px;">Antropología cotidiana, deporte y género: reflexiones accesibles para audiencias más allá de la academia.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ redesCols }};gap:16px;">
+        <a href="https://instagram.com/" target="_blank" style="background:#fff;border:1px solid #E2DBD1;border-radius:2px;padding:26px 22px;display:flex;align-items:center;gap:18px;transition:all 0.2s;" style-hover="border-color:#9E7435;box-shadow:0 2px 12px rgba(158,116,53,0.1);">
+          <div style="width:46px;height:46px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#bc1888);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
+          <div><p style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#1C1917;margin-bottom:2px;">Instagram</p><p style="font-family: 'Inter',sans-serif; font-size: 12px; color: #78716C; margin-bottom: 2px; position: relative">@muyempirica</p><p style="margin: 0; font-size: 16px; line-height: 1; font-family: 'EB Garamond', Georgia, serif; position: absolute; left: 93px; top: 12px">Your text here</p><p></p><p style="font-family:'Inter',sans-serif;font-size:11px;color:#A8A29E;">Divulgación · Canal principal</p></div>
+        </a>
+        <a href="https://youtube.com/" target="_blank" style="background:#fff;border:1px solid #E2DBD1;border-radius:2px;padding:26px 22px;display:flex;align-items:center;gap:18px;transition:all 0.2s;" style-hover="border-color:#9E7435;box-shadow:0 2px 12px rgba(158,116,53,0.1);">
+          <div style="width:46px;height:46px;background:#FF0000;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg></div>
+          <div><p style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#1C1917;margin-bottom:2px;">YouTube</p><p style="font-family:'Inter',sans-serif;font-size:12px;color:#9E7435;font-style:italic;margin-bottom:2px;">Próximamente</p><p style="font-family:'Inter',sans-serif;font-size:11px;color:#A8A29E;">Videos y clases abiertas</p></div>
+        </a>
+        <a href="#audiovisual" style="background:#fff;border:1px solid #E2DBD1;border-radius:2px;padding:26px 22px;display:flex;align-items:center;gap:18px;transition:all 0.2s;" style-hover="border-color:#9E7435;box-shadow:0 2px 12px rgba(158,116,53,0.1);">
+          <div style="width:46px;height:46px;background:#8B5CF6;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg></div>
+          <div><p style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#1C1917;margin-bottom:2px;">Podcast</p><p style="font-family:'Inter',sans-serif;font-size:12px;color:#9E7435;margin-bottom:2px;">Primeros episodios disponibles</p><p style="font-family:'Inter',sans-serif;font-size:11px;color:#A8A29E;">Deporte y sociedad</p></div>
+        </a>
+        <a href="https://linktr.ee/" target="_blank" style="background:#fff;border:1px solid #E2DBD1;border-radius:2px;padding:26px 22px;display:flex;align-items:center;gap:18px;transition:all 0.2s;" style-hover="border-color:#9E7435;box-shadow:0 2px 12px rgba(158,116,53,0.1);">
+          <div style="width:46px;height:46px;background:#27AE60;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M13.5 3.5L16 6l-1.5 1.5L13 6V12h-2V6l-1.5 1.5L8 6l2.5-2.5a1.4 1.4 0 012 0z"></path><circle cx="12" cy="13.5" r="1"></circle><path d="M10.5 20.5L8 18l1.5-1.5L11 18v-4h2v4l1.5-1.5L16 18l-2.5 2.5a1.4 1.4 0 01-2 0z"></path></svg></div>
+          <div><p style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#1C1917;margin-bottom:2px;">Linktree</p><p style="font-family:'Inter',sans-serif;font-size:12px;color:#78716C;margin-bottom:2px;">Todos los enlaces reunidos</p><p style="font-family:'Inter',sans-serif;font-size:11px;color:#A8A29E;">linktr.ee/muyempirca</p></div>
+        </a>
+        <a href="https://patreon.com/" target="_blank" style="background:#fff;border:1px solid #E2DBD1;border-radius:2px;padding:26px 22px;display:flex;align-items:center;gap:18px;transition:all 0.2s;" style-hover="border-color:#9E7435;box-shadow:0 2px 12px rgba(158,116,53,0.1);">
+          <div style="width:46px;height:46px;background:#FF424D;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><circle cx="14.5" cy="9.5" r="6.5"></circle><rect x="2" y="3" width="4" height="18" rx="1"></rect></svg></div>
+          <div><p style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#1C1917;margin-bottom:2px;">Patreon</p><p style="font-family:'Inter',sans-serif;font-size:12px;color:#78716C;margin-bottom:2px;">Apoyo a la divulgación</p><p style="font-family:'Inter',sans-serif;font-size:11px;color:#A8A29E;">Acceso anticipado a contenidos</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONTACTO -->
+  <section id="contacto" data-section="contacto" data-screen-label="Contacto profesional" style="padding:{{ sp }};background:#1C1917;">
+    <div style="max-width:960px;margin:0 auto;">
+      <div style="margin-bottom:48px;">
+        <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#9E7435;margin-bottom:12px;">Contacto Profesional</p>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-size:{{ ts }};font-weight:600;line-height:1.08;letter-spacing:-0.01em;color:#F0E8D8;margin-bottom:14px;">Trabajemos juntos</h2>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:rgba(240,232,216,0.55);line-height:1.72;max-width:500px;">Para consultas sobre servicios de BS Consultora, colaboraciones con el Observatorio o cualquier consulta profesional.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ contactCols }};gap:52px;align-items:start;">
+        <div>
+          <form name="contacto" method="POST" data-netlify="true" style="display:flex;flex-direction:column;gap:18px;">
+            <input type="hidden" name="form-name" value="contacto">
+            <div style="display:grid;grid-template-columns:{{ formCols }};gap:16px;">
+              <div>
+                <label style="display:block;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,232,216,0.4);margin-bottom:7px;">Nombre</label>
+                <input type="text" name="nombre" required="" placeholder="Tu nombre completo" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:2px;font-family:'Inter',sans-serif;font-size:14px;color:#F0E8D8;outline:none;transition:border-color 0.2s;" style-focus="border-color:#9E7435;">
+              </div>
+              <div>
+                <label style="display:block;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,232,216,0.4);margin-bottom:7px;">Correo electrónico</label>
+                <input type="email" name="email" required="" placeholder="tu@correo.com" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:2px;font-family:'Inter',sans-serif;font-size:14px;color:#F0E8D8;outline:none;transition:border-color 0.2s;" style-focus="border-color:#9E7435;">
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,232,216,0.4);margin-bottom:7px;">Institución <span style="color:rgba(240,232,216,0.25);font-weight:400;">(opcional)</span></label>
+              <input type="text" name="institucion" placeholder="Universidad, organización, etc." style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:2px;font-family:'Inter',sans-serif;font-size:14px;color:#F0E8D8;outline:none;transition:border-color 0.2s;" style-focus="border-color:#9E7435;">
+            </div>
+            <div>
+              <label style="display:block;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,232,216,0.4);margin-bottom:7px;">Servicio de interés</label>
+              <select name="servicio" style="width:100%;padding:11px 14px;background:#2A2520;border:1px solid rgba(255,255,255,0.1);border-radius:2px;font-family:'Inter',sans-serif;font-size:14px;color:#F0E8D8;outline:none;cursor:pointer;">
+                <option value="">Seleccioná un servicio</option>
+                <option value="asesoramiento">Asesoramiento metodológico individual</option>
+                <option value="instrumentos">Diseño / revisión de instrumentos</option>
+                <option value="analisis">Análisis de datos cualitativos</option>
+                <option value="campo">Relevamiento etnográfico</option>
+                <option value="observatorio">Colaboración con el Observatorio</option>
+                <option value="otro">Otra consulta</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,232,216,0.4);margin-bottom:7px;">Descripción</label>
+              <textarea name="mensaje" rows="5" required="" placeholder="Describí brevemente tu proyecto o consulta..." style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:2px;font-family:'Inter',sans-serif;font-size:14px;color:#F0E8D8;outline:none;resize:vertical;line-height:1.65;transition:border-color 0.2s;" style-focus="border-color:#9E7435;"></textarea>
+            </div>
+            <button type="submit" style="display:inline-flex;align-items:center;gap:10px;padding:13px 26px;background:#9E7435;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;border:none;border-radius:2px;cursor:pointer;transition:background 0.2s;align-self:flex-start;" style-hover="background:#7D5B28;">Enviar consulta <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M7.5 2.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+          </form>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:28px;">
+          <div><p style="font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,232,216,0.3);margin-bottom:10px;">Contacto directo</p><a href="mailto:contacto@mariabelensilva.com.ar" style="font-family:'EB Garamond',Georgia,serif;font-size:18px;color:#D4A843;line-height:1.4;transition:opacity 0.2s;" style-hover="opacity:0.75;">mbelusilva@icloud.com</a></div>
+          <div><p style="font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,232,216,0.3);margin-bottom:10px;">Ubicación</p><p style="font-family:'Inter',sans-serif;font-size:14px;color:rgba(240,232,216,0.6);line-height:1.65;">Posadas, Misiones<br>Argentina</p></div>
+          <div></div>
+          <div style="padding:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:2px;"><p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;font-style:italic;color:rgba(240,232,216,0.6);line-height:1.65;">Para colaboraciones académicas o con el Observatorio, también podés escribir directamente al correo.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#100D09;padding:{{ footerPad }};display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <span style="font-family:'EB Garamond',Georgia,serif;font-size:16px;font-weight:600;letter-spacing:0.06em;color:rgba(240,232,216,0.45);">María Belén Silva</span>
+      <span style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(240,232,216,0.22);">© 2025 · Posadas, Misiones, Argentina</span>
+    </div>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+      <a href="https://instagram.com" target="_blank" style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(240,232,216,0.32);transition:color 0.2s;" style-hover="color:#D4A843;">Instagram</a>
+      <a href="https://linktr.ee" target="_blank" style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(240,232,216,0.32);transition:color 0.2s;" style-hover="color:#D4A843;">Linktree</a>
+      <a href="#contacto" style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(240,232,216,0.32);transition:color 0.2s;" style-hover="color:#D4A843;">Contacto</a>
+      <span style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(240,232,216,0.18);">BS Consultora</span>
+    </div>
+  </footer>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1440, &quot;height&quot;: 900},
+  &quot;showScrollCue&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;},
+  &quot;obsLayout&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;grid&quot;, &quot;list&quot;], &quot;default&quot;: &quot;grid&quot;, &quot;tsType&quot;: &quot;'grid' | 'list'&quot;},
+  &quot;defaultTab&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;papers&quot;, &quot;ponencias&quot;, &quot;divulgacion&quot;], &quot;default&quot;: &quot;papers&quot;, &quot;tsType&quot;: &quot;'papers' | 'ponencias' | 'divulgacion'&quot;}
+}">
+class Component extends DCLogic {
+  state = {
+    menuOpen: false,
+    activeSection: 'inicio',
+    isMobile: typeof window !== 'undefined' && window.innerWidth < 900,
+  };
+
+  componentDidMount() {
+    const onResize = () => {
+      const m = window.innerWidth < 900;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m });
+    };
+    window.addEventListener('resize', onResize);
+    this._rmResize = () => window.removeEventListener('resize', onResize);
+
+    this._io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) this.setState({ activeSection: e.target.dataset.section });
+      });
+    }, { threshold: 0.15, rootMargin: '-60px 0px -50% 0px' });
+    document.querySelectorAll('[data-section]').forEach(el => this._io.observe(el));
+  }
+
+  componentWillUnmount() {
+    this._rmResize && this._rmResize();
+    this._io && this._io.disconnect();
+  }
+
+  renderVals() {
+    const { menuOpen, activeSection, isMobile } = this.state;
+    const isDesktop = !isMobile;
+    const showScrollCue = this.props.showScrollCue !== false;
+    const obsLayout = this.props.obsLayout || 'grid';
+
+    const closeMenu = () => this.setState({ menuOpen: false });
+    const toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+
+    const navItems = [
+      { label: 'Inicio', href: '#inicio', id: 'inicio' },
+      { label: 'Sobre mí', href: '#sobre-mi', id: 'sobre-mi' },
+      { label: 'Producción', href: '#produccion', id: 'produccion' },
+      { label: 'Observatorio', href: '#observatorio', id: 'observatorio' },
+      { label: 'Audiovisual', href: '#audiovisual', id: 'audiovisual' },
+      { label: 'Consultoría', href: '#consultoria', id: 'consultoria' },
+      { label: 'Redes', href: '#redes', id: 'redes' },
+      { label: 'Contacto', href: '#contacto', id: 'contacto' },
+    ].map(n => ({
+      ...n,
+      bar: n.id === activeSection ? '#9E7435' : 'transparent',
+      clr: n.id === activeSection ? '#9E7435' : '#6B6460',
+      wt: n.id === activeSection ? '600' : '400',
+    }));
+
+    const papersRaw = [
+      { year: '2026', title: 'Antropología y Psicología: Hacia una Salud Mental Integral', sub: 'Artículo para Fundación CESME', lugar: '', url: 'https://cesme.com.ar/blog/antropologia-psicologia-salud-mental-integral' },
+    ].map(p => ({ ...p, tipo: 'Artículo', tipoBg: 'rgba(158,116,53,0.1)', tipoClr: '#9E7435' }));
+
+    const ponenciasRaw = [
+      { year: '2025', title: 'Prestame tu voz. Mujeres construyendo autoridad en el arbitraje de partidos de fútbol masculino', sub: 'Jornadas de Investigadores Iniciales FHyCS UNaM', lugar: 'Posadas, Misiones', url: 'https://www.academia.edu/169175255/Prestame_tu_voz_Mujeres_construyendo_autoridad_en_el_arbitraje_de_partidos_partidos_de_f%C3%BAtbol_masculino?source=swp_share' },
+      { year: '2024', title: 'El cuerpo en juego: capital, utopía y símbolo en la antropología del deporte', sub: 'Resumen FHyCS UNaM', lugar: 'Posadas, Misiones', url: 'https://www.academia.edu/169175690/EL_CUERPO_EN_JUEGO_CAPITAL_UTOP%C3%8DA_Y_S%C3%8DMBOLO?source=swp_share' },
+    ].map(p => ({ ...p, tipo: 'Ponencia', tipoBg: '#EDE8DF', tipoClr: '#78716C' }));
+
+    const produccion = [...papersRaw, ...ponenciasRaw]
+      .sort((a, b) => Number(b.year) - Number(a.year));
+
+    const obsItems = [
+      { id: '01', title: 'Experiencias de corredores en competencias de Posadas, Misiones 2026', fuente: 'M. B. Silva', fecha: '2026', resumen: 'Relevamiento cualitativo de datos alrededor de los corredores en competencias de carreras de calle y trail.', tags: ['deporte', 'running', 'cuerpo'], dl: null, hasDl: false },
+    ];
+
+    const avItems = [
+      { isPod: true, isVid: false, num: 'EP. 01', titulo: '¿Qué hace un/a antropólogo/a en una cancha?', desc: 'Introducción a la antropología del deporte y por qué importa estudiar el juego como fenómeno social.', fecha: 'Abril 2025', dur: '38 min', url: '#' },
+      { isPod: true, isVid: false, num: 'EP. 02', titulo: 'Género y deporte: más allá de la brecha', desc: 'Las dimensiones simbólicas y estructurales de la desigualdad de género en el deporte argentino.', fecha: 'Mayo 2025', dur: '44 min', url: '#' },
+      { isPod: false, isVid: true, num: null, titulo: 'El cuerpo como campo de investigación — Clase abierta', desc: 'Clase introductoria sobre corporalidad, prácticas deportivas y métodos etnográficos. Jornadas CESME, Posadas 2025.', fecha: 'Marzo 2025', dur: '52 min', url: '#' },
+      { isPod: false, isVid: true, num: null, titulo: 'Divulgación científica en redes: ciencia sin muros', desc: 'Conversatorio sobre estrategias de comunicación científica en plataformas digitales para investigadores en ciencias sociales.', fecha: 'Enero 2025', dur: '28 min', url: '#' },
+    ];
+
+    const servicios = [
+      { num: '01', titulo: 'Asesoramiento metodológico individual', desc: 'Sesiones de consulta para el diseño y orientación de proyectos de investigación cualitativa. Para tesistas, investigadores independientes y equipos.' },
+      { num: '02', titulo: 'Diseño y revisión de instrumentos', desc: 'Elaboración o revisión de guías de entrevista, pautas de observación, encuestas mixtas y demás instrumentos de recolección de datos.' },
+      { num: '03', titulo: 'Análisis de datos cualitativos', desc: 'Procesamiento, codificación y análisis de material empírico: entrevistas, registros de campo, documentos. Con devolución de informe.' },
+      { num: '04', titulo: 'Relevamiento etnográfico', desc: 'Trabajo de campo contratado: observación participante, entrevistas y relevamiento de datos para terceros, con informe final.' },
+    ];
+
+    const m = isMobile;
+    return {
+      menuOpen, isMobile, isDesktop,
+      toggleMenu, closeMenu,
+      navItems,
+      produccion, obsItems, avItems, servicios,
+      mainML: m ? '0' : '220px',
+      mainPT: m ? '60px' : '0',
+      sp: m ? '64px 24px' : '96px 64px',
+      ts: m ? '32px' : '46px',
+      heroSP: m ? '80px 24px 64px' : '0 64px',
+      heroFlex: m ? 'column' : 'row',
+      heroGap: m ? '40px' : '64px',
+      heroNmSz: m ? '52px' : '84px',
+      heroDescSz: m ? '17px' : '21px',
+      heroPR: m ? '0' : '40px',
+      heroPhMaxW: m ? '260px' : '380px',
+      diagDisplay: m ? 'none' : 'block',
+      sobreCols: m ? '1fr' : '5fr 3fr',
+      twoCols: m ? '1fr' : '1fr 1fr',
+      obsGC: m ? '1fr' : (obsLayout === 'list' ? '1fr' : '1fr 1fr 1fr'),
+      contactCols: m ? '1fr' : '3fr 2fr',
+      formCols: m ? '1fr' : '1fr 1fr',
+      redesCols: m ? '1fr' : '1fr 1fr 1fr',
+      footerPad: m ? '24px' : '28px 64px',
+      showScrollCue,
+    };
+  }
+}
+</script>
+</body>
+</html>
